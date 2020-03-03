@@ -58,8 +58,7 @@ app.get('/request-cv', function (req, res) {
     res.download(filePath,fileName);
 })
 try {
-    app.listen(3000);
-    console.log('server running on 3000')
+    .listen(process.env.PORT || 3000)
 } catch {
     console.log('an error occured starting the server')
 }
