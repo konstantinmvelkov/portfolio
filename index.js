@@ -27,12 +27,12 @@ app.post('/submit', function (req, res) {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'studentlivingnl@gmail.com',
-            pass: 'SLnetherlands'
+            user: process.env.MAIL_ADDRESS,
+            pass: process.env.MAIL_SECRET
         }
     });
     let mailOptions = {
-        from: 'studentlivingnl@gmail.com',
+        from: process.env.MAIL_ADDRESS,
         to: maillist,
         subject: 'Contact from Portfolio from ' + req.body.name,
         text: req.body.comments + ' from ' + req.body.eMail,
