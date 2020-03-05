@@ -19,13 +19,13 @@ app.get('/', function(req, res){
     res.render('index');
 });
 app.post('/submit', function (req, res) {
-    console.log(req.body.name);
     var maillist = [
         'konstantinmvelkov@gmail.com',
         req.body.eMail
       ];
     let transporter = nodemailer.createTransport({
         service: 'gmail',
+        port: 465,
         auth: {
             user: process.env.MAIL_ADDRESS,
             pass: process.env.MAIL_SECRET
