@@ -24,11 +24,15 @@ app.post('/submit', function (req, res) {
         req.body.eMail
       ];
     let transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtp.gmail.com',
         port: 465,
         auth: {
             user: process.env.MAIL_ADDRESS,
             pass: process.env.MAIL_SECRET
+        },
+        tls: {
+            // do not fail on invalid certs
+            rejectUnauthorized: false
         }
     });
     let mailOptions = {
