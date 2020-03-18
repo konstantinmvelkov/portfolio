@@ -21,8 +21,7 @@ app.get('/', function(req, res){
 var sent;
 app.post('/submit', function (req, res) {
     var maillist = [
-        'konstantinmvelkov@gmail.com',
-        req.body.eMail
+        'konstantinmvelkov@gmail.com'
       ];
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',

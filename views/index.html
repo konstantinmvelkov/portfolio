@@ -5,6 +5,7 @@
   <title>Konstantin Velkov</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./images/blackLogoKV.png" type="image/gif" sizes="16x16">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
@@ -12,6 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 
@@ -42,7 +44,7 @@
               <li><a href="#">Media</a></li>
             </ul>
           </li> -->
-          <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+          <!-- <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li> -->
         </ul>
       </div>
     </div>
@@ -57,13 +59,14 @@
   </div>
   <div id="about" class="container text-center">
     <h3>About me</h3>
+    <img src="/images/portrait.jpg" height="100%" width="100%">
     <p>Hello!</p>
     <p>My name is Konstantin Velkov and I have been an avid coder since 2016.
       My main interest and focal point of my experience are distributed systems.
       Completed through REST architecture and including database implementation they have given me an insight into the
       power and agility of the network. My curiosity found its continuity into the creation of Android applications,
       again mainly based on the client-server communication model.
-      Currently I have set my sight on back end developement.
+      Currently I have set my sight on full stack web developement. 
       You can find more about my experience in my resume.
     </p>
     <br>
@@ -74,13 +77,6 @@
 
   <!-- Container (TOUR Section) -->
   <div id="services" class="bg-1">
-    <!-- <div style="width: 20%; float:left">
-
-    </div>
-
-    <div style="width: 80%; float:right">
-
-    </div> -->
     <div class="container">
       <h3 class="text-center">Services</h3>
       <div>
@@ -92,7 +88,7 @@
               Web solutions
             </h3>
             <p class="fade_on_phone">
-              Client-Server communication platforms including database information handling or simple webpages - you
+              Client-Server communication platforms including data handling or simple webpages - you
               name it.
             </p>
           </div>
@@ -206,7 +202,7 @@
           if(response.status=='200') {           
             document.getElementById("contact-success-text").innerHTML = "Email sent!";
           } else {
-            document.getElementById("contact-success-text").innerHTML = "Email not sent. Sorry for the inconvenience. Please try again later";
+            document.getElementById("contact-success-text").innerHTML = "There was an error sending the mail. Please try again later.";
           }
           // Examine the text in the response
           // response.json().then(function (data) {
