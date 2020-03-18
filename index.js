@@ -18,6 +18,7 @@ app.use(express.json({ limit: '1mb' }));
 app.get('/', function(req, res){
     res.render('index');
 });
+var sent;
 app.post('/submit', function (req, res) {
     var maillist = [
         'konstantinmvelkov@gmail.com',
@@ -41,20 +42,18 @@ app.post('/submit', function (req, res) {
         subject: 'Contact from Portfolio from ' + req.body.name,
         text: req.body.comments + ' from ' + req.body.eMail,
     };
-    var sent;
+
     transporter.sendMail(mailOptions, function (err, data) {
         if (err) {
             console.log("failed sending an email" + err);
-            sent=false;
+            res.status(201);
+            res.end();
         } else {
             console.log("email sent")
-            sent=true;
-        }
-        console.log(sent);
-        res.end(sent);
+            res.status(200);
+            res.end();
+        }  
     })
-
-    //res.end(sent);
 })
 app.get('/request-cv', function (req, res) {
     var filePath = "./public/Konstantin_Velkov_CV.pdf"; // Or format the path using the `id` rest param

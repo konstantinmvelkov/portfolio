@@ -33,7 +33,7 @@
           <li><a href="#about">ABOUT</a></li>
           <li><a href="#services">SERVICES</a></li>
           <li><a href="#contact">CONTACT</a></li>
-          <li class="dropdown">
+          <!-- <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
               <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -41,60 +41,14 @@
               <li><a href="#">Extras</a></li>
               <li><a href="#">Media</a></li>
             </ul>
-          </li>
+          </li> -->
           <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
         </ul>
       </div>
     </div>
   </nav>
- 
+
   <img src="./images/codeBackground.JPG" alt="code" width="100%">
-  <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img class="carousel-inner img" src="./images/codeBackground.JPG" alt="coder">
-        <div class="carousel-caption">
-          <h3>Coding solutions</h3>
-          <p>Optimised and Tailored to Your needs</p>
-        </div>      
-      </div> -->
-
-  <!--
-      <div class="item">
-        <img src="chicago.jpg" alt="Chicago" width="1200" height="700">
-        <div class="carousel-caption">
-          <h3>Chicago</h3>
-          <p>Thank you, Chicago - A night we won't forget.</p>
-        </div>      
-      </div>
-    
-      <div class="item">
-        <img src="la.jpg" alt="Los Angeles" width="1200" height="700">
-        <div class="carousel-caption">
-          <h3>LA</h3>
-          <p>Even though the traffic was a mess, we had the best time playing at Venice Beach!</p>
-        </div>      
-      </div>
-    </div>
--->
-
-  <!-- Left and right controls -->
-  <!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a> -->
-  <!-- </div> -->
 
   <!-- Container (The Band Section) -->
   <div class="carousel-caption" , style="background:rgba(45, 45, 47, 0.84);">
@@ -104,15 +58,17 @@
   <div id="about" class="container text-center">
     <h3>About me</h3>
     <p>Hello!</p>
-    <p>My name is Konstantin Velkov and I have been an avid coder since 2016. 
+    <p>My name is Konstantin Velkov and I have been an avid coder since 2016.
       My main interest and focal point of my experience are distributed systems.
       Completed through REST architecture and including database implementation they have given me an insight into the
-      power and agility of the network. My curiosity found its continuity into the creation of Android applications, again mainly based on the client-server communication model.
-      My first simple app mainly with demonstrative and know-how acquiring purposes, MealChooser can be found in the PlayStore.
+      power and agility of the network. My curiosity found its continuity into the creation of Android applications,
+      again mainly based on the client-server communication model.
+      Currently I have set my sight on back end developement.
+      You can find more about my experience in my resume.
     </p>
     <br>
     <div>
-      <button id="dButton" class="btn" style="text-align: center;" type="download">Download my Resume</button>     
+      <button id="dButton" class="btn" style="text-align: center;" type="download">Download my Resume</button>
     </div>
   </div>
 
@@ -144,7 +100,8 @@
         <br style="clear: both;">
         <div style="margin-top: 20px;">
           <img class="circular--square" src="/images/shopping_cart.png" height="200" width="200"
-            style="background-color: white; float:left;" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="300"> 
+            style="background-color: white; float:left;" data-aos="fade-right" data-aos-duration="1500"
+            data-aos-offset="300">
           <div style=" float:right;width: 30%; " data-aos="fade-right" data-aos-duration="1500" data-aos-offset="300">
             <h3>
               E-commerce solutions
@@ -157,7 +114,8 @@
         <br style="clear: both;">
         <div style="margin-top: 20px;">
           <img class="circular--square" src="/images/phone.png" height="200" width="200"
-            style="background-color: white; float:left;" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="300">
+            style="background-color: white; float:left;" data-aos="fade-right" data-aos-duration="1500"
+            data-aos-offset="300">
           <div style=" float:right;width: 30%;" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="300">
             <h3>
               Android App solutions
@@ -183,10 +141,15 @@
         <p><span class="glyphicon glyphicon-map-marker"></span> Sofia, Bulgaria</p>
         <p><span class="glyphicon glyphicon-phone"></span> Phone: +359 88 941 5030</p>
         <p><span class="glyphicon glyphicon-envelope"></span> Email: konstantinmvelkov@gmail.com</p>
-        <p><span class="glyphicon glyphicon-user"></span><a href= https://www.linkedin.com/in/konstantin-velkov> LinkedIn</a></p>
-        
+        <p><span class="glyphicon glyphicon-user"></span><a href=https://www.linkedin.com/in/konstantin-velkov>
+            LinkedIn</a></p>
+
       </div>
-      <div class="col-md-8">
+      <div id="loading" class="col-md-8 loader" style="visibility: hidden;"></div>
+      <div id="contact-success" class="col-md-8" style="visibility: hidden;">
+        <p id="contact-success-text"></p>
+      </div>
+      <div id="contact-rows" class="col-md-8" style="visibility: visible;">
         <div class="row">
           <div class="col-sm-6 form-group">
             <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
@@ -222,6 +185,8 @@
       window.open('/request-cv');
     }
     function sendMail() {
+      document.getElementById("contact-rows").style.visibility = "hidden";
+      document.getElementById("loading").style.visibility = "visible";
       var comments = document.getElementById("comments").value;
       var name = document.getElementById("name").value;
       var eMail = document.getElementById("email").value;
@@ -233,7 +198,26 @@
         },
         body: JSON.stringify(info)
       };
-      fetch('/submit', options);
+      //TODO implement on response email sent successfully
+      fetch('/submit', options).then(
+        function (response) {
+          document.getElementById("contact-success").style.visibility = "visible";
+          document.getElementById("loading").style.visibility = "hidden";
+          if(response.status=='200') {           
+            document.getElementById("contact-success-text").innerHTML = "Email sent!";
+          } else {
+            document.getElementById("contact-success-text").innerHTML = "Email not sent. Sorry for the inconvenience. Please try again later";
+          }
+          // Examine the text in the response
+          // response.json().then(function (data) {
+
+          //   document.getElementById("comments").value=data.body;
+          // });
+        }
+      )
+        .catch(function (err) {
+          console.log('Fetch Error :-S', err);
+        });
     }
 
     $(document).ready(function () {
